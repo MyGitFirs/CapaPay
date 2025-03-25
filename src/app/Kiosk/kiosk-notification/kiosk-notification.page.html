@@ -1,0 +1,86 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Page</title>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@latest/css/ionic.bundle.css">
+<body>
+  <ion-app>
+    <ion-content>
+         <!-- Header -->
+         <div class="header">
+            <div>
+                <h2>Notification</h2>
+                <p></p>
+            </div>
+            <ion-icon name="notifications"></ion-icon>
+        </div>
+
+   <!-- Notifications List -->
+<div class="notifications-container">
+    <div class="notification-wrapper">
+        <ion-radio slot="start"></ion-radio>
+        <div class="notification-item">
+            <div class="notification-message">
+                <p>You recieved PHP 300 from Don Martin Francisco on March 13, 2025, at 3:24 PM.</p>
+            </div>
+        </div>
+    </div>
+    <div class="notification-wrapper">
+        <ion-radio slot="start"></ion-radio>
+        <div class="notification-item">
+            <div class="notification-message">
+              <p>You recieved PHP 300 from Don Martin Francisco on March 13, 2025, at 3:24 PM.</p>
+            </div>
+        </div>
+    </div>
+    <div class="notification-wrapper">
+        <ion-radio slot="start"></ion-radio>
+        <div class="notification-item">
+            <div class="notification-message">
+              <p>You recieved PHP 300 from Don Martin Francisco on March 13, 2025, at 3:24 PM.</p>
+            </div>
+        </div>
+    </div>
+    <div class="notification-wrapper">
+        <ion-radio slot="start"></ion-radio>
+        <div class="notification-item">
+            <div class="notification-message">
+              <p>You recieved PHP 300 from Don Martin Francisco on March 13, 2025, at 3:24 PM.</p>
+            </div>
+        </div>
+    </div>
+</div>
+    </ion-content>
+
+    
+      <!-- Floating QR Generator Button Above Navigation -->
+      <div class="fab-container">
+        <ion-fab class="fab-button">
+            <ion-fab-button>
+                <ion-icon name="qr-code-outline"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>
+    </div>
+
+      <!-- Bottom Navigation Panel -->
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="home">
+            <ion-icon name="home"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button tab="transactions">
+            <ion-icon name="list"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button tab="qr">
+          
+        </ion-tab-button>
+        <ion-tab-button tab="notification">
+            <ion-icon name="notifications"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button tab="profile">
+            <ion-icon name="storefront"></ion-icon>
+        </ion-tab-button>
+    </ion-tab-bar>
+</ion-app>
+  
+</body>

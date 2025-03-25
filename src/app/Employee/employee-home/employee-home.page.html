@@ -1,0 +1,97 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Page</title>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@latest/css/ionic.bundle.css">
+
+<body>
+    <ion-app>
+        <ion-content>
+            <!-- Header -->
+            <div class="header">
+                <div>
+                    <h2>Hi Don Martin!</h2>
+                    <p>donmartinfrancisco13gmail.com</p>
+                </div>
+                <ion-icon name="notifications"></ion-icon>
+            </div>
+
+            <!-- Available Balance -->
+            <div class="section-container balance-container">
+                <h3>Available Balance</h3>
+                <h1>₱ 5,000.00</h1>
+            </div>
+
+          <!-- Recent Transactions -->
+<div class="section-container recent-transactions">
+    <ion-list>
+        <ion-list-header>
+            <h3>Recent Transactions</h3>
+        </ion-list-header>
+        <ion-item class="transaction-item">
+            <ion-icon name="storefront-outline" slot="start"></ion-icon>
+            <ion-label>
+                <h2 class="store-name">ABC Store</h2>
+                <p class="transaction-details">Store | 2025-03-20</p>
+            </ion-label>
+            <div class="transaction-price">- PHP 200</div>
+        </ion-item>
+        <ion-item class="transaction-item">
+            <ion-icon name="fast-food-outline" slot="start"></ion-icon>
+            <ion-label>
+                <h2 class="store-name">XYZ Canteen</h2>
+                <p class="transaction-details">Canteen | 2025-03-19</p>
+            </ion-label>
+            <div class="transaction-price">- PHP 150</div>
+        </ion-item>
+        <ion-item class="transaction-item">
+            <ion-icon name="storefront-outline" slot="start"></ion-icon>
+            <ion-label>
+                <h2 class="store-name">ABC Store</h2>
+                <p class="transaction-details">Store | 2025-03-20</p>
+            </ion-label>
+            <div class="transaction-price">- PHP 200</div>
+        </ion-item>
+        <ion-item class="transaction-item">
+            <ion-icon name="fast-food-outline" slot="start"></ion-icon>
+            <ion-label>
+                <h2 class="store-name">XYZ Canteen</h2>
+                <p class="transaction-details">Canteen | 2025-03-19</p>
+            </ion-label>
+            <div class="transaction-price">- PHP 150</div>
+        </ion-item>
+    </ion-list>
+</div>
+
+        </ion-content>
+
+        <!-- Floating QR Generator Button Above Navigation -->
+        <div class="fab-container">
+            <ion-fab class="fab-button">
+                <ion-fab-button>
+                    <ion-icon name="qr-code-outline"></ion-icon>
+                </ion-fab-button>
+            </ion-fab>
+        </div>
+
+        <!-- Bottom Navigation Panel -->
+        <ion-tab-bar slot="bottom">
+            <ion-tab-button tab="home">
+                <ion-icon name="home"></ion-icon>
+            </ion-tab-button>
+            <ion-tab-button tab="transactions">
+                <ion-icon name="list"></ion-icon>
+            </ion-tab-button>
+            <ion-tab-button tab="qr">
+              
+            </ion-tab-button>
+            <ion-tab-button tab="notification">
+                <ion-icon name="notifications"></ion-icon>
+            </ion-tab-button>
+            <ion-tab-button tab="profile">
+                <ion-icon name="person"></ion-icon>
+            </ion-tab-button>
+        </ion-tab-bar>
+    </ion-app>
+</body>

@@ -3,11 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { EmployeeHomePage } from './employee-home.page';
 
+
 const routes: Routes = [
   {
     path: '',
     component: EmployeeHomePage
-  }
+  },
 ];
 
 @NgModule({

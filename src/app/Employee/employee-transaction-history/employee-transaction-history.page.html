@@ -1,6 +1,3 @@
-<p>
-  admin-transaction-history works!
-</p>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home Page</title>
@@ -10,7 +7,8 @@
 <body>
   <ion-app>
     <ion-content>
-         <!-- Header -->
+       
+        <!-- Header -->
          <div class="header">
             <div>
                 <h2>Transaction History</h2>
@@ -52,32 +50,8 @@
       
     </ion-content>
 
-    <!-- Floating QR Generator Button Above Navigation -->
-    <div class="fab-container">
-        <ion-fab class="fab-button">
-            <ion-fab-button>
-                <ion-icon name="qr-code-outline"></ion-icon>
-            </ion-fab-button>
-        </ion-fab>
-    </div>
+     <!-- Employee Navigation -->
+     <app-employee-navbar></app-employee-navbar>
 
-    <!-- Bottom Navigation Panel -->
-    <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="home">
-            <ion-icon name="home"></ion-icon>
-        </ion-tab-button>
-        <ion-tab-button tab="transactions">
-            <ion-icon name="list"></ion-icon>
-        </ion-tab-button>
-        <ion-tab-button tab="qr">
-          
-        </ion-tab-button>
-        <ion-tab-button tab="notification">
-            <ion-icon name="notifications"></ion-icon>
-        </ion-tab-button>
-        <ion-tab-button tab="profile">
-            <ion-icon name="person"></ion-icon>
-        </ion-tab-button>
-    </ion-tab-bar>
 </ion-app>
 </body>

@@ -23,6 +23,9 @@ export class EmployeeNavbarComponent  implements OnInit {
   goToNotification() {
     this.router.navigate(['/employee-notification']);
   }
-  
+  goToQR() {
+    this.router.navigate(['/employee-qr-generator']);
+  }
+
 
 }

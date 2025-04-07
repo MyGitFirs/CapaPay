@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar, IonButton, IonList, IonListHeader, IonItem, IonFab, IonFabButton, IonHeader, IonTitle, IonCol, IonRow, IonInput, IonGrid } from "@ionic/angular/standalone";
 
 @Component({
@@ -11,7 +12,7 @@ import { IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonTool
 })
 export class AdminNavbarComponent  implements OnInit {
 
-  constructor(private router: Router ) { }
+  constructor(private navCtrl: NavController, private router: Router ) { }
 
   ngOnInit() {}
 
@@ -26,6 +27,21 @@ export class AdminNavbarComponent  implements OnInit {
   }
   goToBalanceManagement() {
     this.router.navigate(['/admin-balance-management']);
+  }
+  goToQR() {
+    this.router.navigate(['/admin-qr-generator']);
+  }
+
+  
+  
+  
+  qrData: string = '';
+  generateQRCode() {
+    if (this.qrData.trim() !== '') {
+      this.router.navigate(['/qr-display'], { queryParams: { qrData: this.qrData } });
+    } else {
+      alert('Please enter some text to generate a QR code.');
+    }
   }
 
 }

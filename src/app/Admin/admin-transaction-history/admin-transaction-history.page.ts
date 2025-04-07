@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar, IonButton, IonList, IonListHeader, IonItem, IonFab, IonFabButton, IonHeader, IonTitle } from "@ionic/angular/standalone";
 
 import { AdminNavbarComponent } from '../../Components/admin-navbar/admin-navbar.component';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,9 +13,13 @@ import { AdminNavbarComponent } from '../../Components/admin-navbar/admin-navbar
 })
 export class AdminTransactionHistoryPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  goToNotification() {
+    this.router.navigate(['/admin-notification']);
   }
 
 }

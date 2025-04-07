@@ -16,6 +16,17 @@ body {
     background-color: #f4f4f4;
     margin: 0;
 }
+
+.logo-container {
+    margin-bottom: 1px;
+}
+
+.logo-img {
+    width: 150px; /* Make it bigger */
+    height: auto;
+    display: block;
+}
+
 .login-container {
     background: #2B2318;
     padding: 20px;
@@ -34,10 +45,13 @@ input {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: white;
+    color: black;
 }
 .forgot-password {
     text-align: right;
     font-size: 0.9em;
+    margin-bottom: 10px;
+
 }
 .continue-btn {
     background: #F7BC00;

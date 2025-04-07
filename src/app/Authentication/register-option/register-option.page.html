@@ -1,21 +1,21 @@
 <body>
   <div class="container">
     <h3 style="color: black; text-align: center;">Registration Options</h3>
-      <div class="register-button">
+      <div class="register-button" (click)="goToRegister()">
           <div class="icon-placeholder">🔑</div>
           <div class="text-content">
               <h3>Register as Administrator</h3>
               <p>Manage and export summaries by employee, category, or kiosk location.</p>
           </div>
       </div>
-      <div class="register-button">
+      <div class="register-button" (click)="goToRegister()">
           <div class="icon-placeholder">👤</div>
           <div class="text-content">
               <h3>Register as Employee</h3>
               <p>Employee Wallet with secure QR codes, balance updates, and transaction filters.</p>
           </div>
       </div>
-      <div class="register-button">
+      <div class="register-button" (click)="goToRegister()">
           <div class="icon-placeholder">🏪</div>
           <div class="text-content">
               <h3>Register as Kiosk</h3>

@@ -83,6 +83,18 @@ const routes: Routes = [
     path: 'kiosk-transaction-history',
     loadChildren: () => import('./Kiosk/kiosk-transaction-history/kiosk-transaction-history.module').then( m => m.KioskTransactionHistoryPageModule)
   },
+  {
+    path: 'admin-qr-generator',
+    loadChildren: () => import('./Admin/admin-qr-generator/admin-qr-generator.module').then( m => m.AdminQrGeneratorPageModule)
+  },
+  {
+    path: 'employee-qr-generator',
+    loadChildren: () => import('./Employee/employee-qr-generator/employee-qr-generator.module').then( m => m.EmployeeQrGeneratorPageModule)
+  },
+  {
+    path: 'company-details',
+    loadChildren: () => import('./Authentication/company-details/company-details.module').then( m => m.CompanyDetailsPageModule)
+  },
 ];
 
 @NgModule({

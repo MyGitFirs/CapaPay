@@ -17,35 +17,50 @@
             <ion-icon name="notifications"></ion-icon>
         </div>
 
-        <!-- Transaction History -->
-        <div class="section-container transactions-container">
-            <h3></h3>
-            
-            <div class="transaction-date">March 19, 2025</div>
-            <div class="transaction-item">
-                <div class="transaction-info">
-                    <h4>ABC Canteen</h4>
-                    <p>Canteen</p>
-                </div>
-                <p class="transaction-price">- ₱ 150</p>
-            </div>
-            <div class="transaction-item">
-                <div class="transaction-info">
-                    <h4>XYZ Store</h4>
-                    <p>Store</p>
-                </div>
-                <p class="transaction-price">- ₱ 300</p>
-            </div>
+       <!-- Recent Transactions -->
+<div class="section-container recent-transactions">
+    <ion-list>
+       
+        <!-- Transactions for March 20, 2025 -->
+        <div class="transaction-date">March 20, 2025</div>
+        <ion-item class="transaction-item">
+            <ion-icon name="storefront-outline" slot="start"></ion-icon>
+            <ion-label>
+                <h2 class="store-name">ABC Store</h2>
+                <p class="transaction-details">Store</p>
+            </ion-label>
+            <div class="transaction-price">- PHP 200</div>
+        </ion-item>
+        <ion-item class="transaction-item">
+            <ion-icon name="storefront-outline" slot="start"></ion-icon>
+            <ion-label>
+                <h2 class="store-name">ABC Store</h2>
+                <p class="transaction-details">Store</p>
+            </ion-label>
+            <div class="transaction-price">- PHP 200</div>
+        </ion-item>
 
-            <div class="transaction-date">March 18, 2025</div>
-            <div class="transaction-item">
-                <div class="transaction-info">
-                    <h4>DEF Canteen</h4>
-                    <p>Canteen</p>
-                </div>
-                <p class="transaction-price">- ₱ 200</p>
-            </div>
-        </div>
+        <!-- Transactions for March 19, 2025 -->
+        <div class="transaction-date">March 19, 2025</div>
+        <ion-item class="transaction-item">
+            <ion-icon name="fast-food-outline" slot="start"></ion-icon>
+            <ion-label>
+                <h2 class="store-name">XYZ Canteen</h2>
+                <p class="transaction-details">Canteen</p>
+            </ion-label>
+            <div class="transaction-price">- PHP 150</div>
+        </ion-item>
+        <ion-item class="transaction-item">
+            <ion-icon name="fast-food-outline" slot="start"></ion-icon>
+            <ion-label>
+                <h2 class="store-name">XYZ Canteen</h2>
+                <p class="transaction-details">Canteen</p>
+            </ion-label>
+            <div class="transaction-price">- PHP 150</div>
+        </ion-item>
+    </ion-list>
+</div>
+
 
       
     </ion-content>

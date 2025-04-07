@@ -49,63 +49,65 @@ ion-content {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Transaction Area */
-.transactions-container {
-    background-color: #2B2B2B;
-    color: #333;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
-    margin-top: 15px auto;
+/* Recent Transactions */
+.recent-transactions {
+    background: none !important;
+    padding: 0 !important;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    overflow: hidden; /* Ensures rounded corners apply to child elements */
 }
 
-/* Date Separator */
+/* Transaction Item */
+.transaction-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px; /* Reduced padding for smaller height */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Light separator */
+    transition: background 0.2s ease-in-out;
+}
+
+/* Remove last border */
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+/* Store Name */
+.store-name {
+    font-size: 0.9rem; /* Slightly smaller font */
+    font-weight: bold;
+    color: #F7BC00;
+}
+
+/* Category & Date */
+.transaction-details {
+    font-size: 0.75rem; /* Smaller text */
+    color: #ffffff;
+    margin-top: 2px;
+}
+
+/* Price (Right-aligned) */
+.transaction-price {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #ffffff;
+    opacity: 80%;
+    min-width: 50px;
+    text-align: right;
+}
+
 .transaction-date {
     font-weight: 600;
     font-size: 0.9rem;
     color: #ffffff;
     margin: 16px 0 10px;
     padding-bottom: 6px;
-    border-bottom: 1px solid #EAEAEA;
-}
-
-/* Transaction Item */
-.transaction-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 12px;
-    border-radius: 8px;
-    background: #2B2B2B;
-    margin: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Light separator */
     transition: background 0.2s ease-in-out;
+    padding: 8px;
 }
 
-/* Hover Effect for Interaction */
-.transaction-item:hover {
-    background: #F7F7F7;
-}
-
-/* Transaction Info */
-.transaction-info h4 {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #ffffff;
-}
-
-.transaction-info p {
-    margin: 0;
-    font-size: 0.85rem;
-    color: #888;
-}
-
-/* Transaction Price */
-.transaction-price {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #F7BC00;
-}
 
 
 

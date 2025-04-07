@@ -1,0 +1,37 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Registration</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@latest/css/ionic.bundle.css">
+</head>
+<body>
+    <ion-app>
+        <ion-content>
+            <div class="section-container">
+                <h2>Company Registration</h2>
+
+                <!-- Company Name Input Field -->
+                <ion-item class="inputCompany">
+                    <ion-label position="stacked">Company Name</ion-label>
+                    <ion-input type="text" placeholder="Enter company name"></ion-input>
+                </ion-item>
+
+                <!-- Nature of Business Buttons -->
+                <h3>Nature of Business</h3>
+                <ion-button expand="full" fill="outline" class="business-btn">Agriculture</ion-button>
+                <ion-button expand="full" fill="outline" class="business-btn">Construction</ion-button>
+                <ion-button expand="full" fill="outline" class="business-btn">Education</ion-button>
+                <ion-button expand="full" fill="outline" class="business-btn">Pharmaceutical</ion-button>
+                <ion-button expand="full" fill="outline" class="business-btn">Trading</ion-button>
+                <ion-button expand="full" fill="outline" class="business-btn">Transportation & Logistics</ion-button>
+                <ion-button expand="full" fill="outline" class="business-btn">Wholesale/Retail</ion-button>
+
+                <!-- Register Company Button -->
+                <ion-button expand="full" color="primary" class="register-btn">Register Company</ion-button>
+            </div>
+        </ion-content>
+    </ion-app>
+</body>

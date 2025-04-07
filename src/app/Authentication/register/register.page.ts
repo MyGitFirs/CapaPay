@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar, IonButton, IonList, IonListHeader, IonItem, IonFab, IonFabButton, IonHeader, IonTitle } from "@ionic/angular/standalone";
 
 @Component({
@@ -9,9 +10,13 @@ import { IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonTool
 })
 export class RegisterPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router ) { }
 
   ngOnInit() {
+  }
+
+  goToLogin() {
+    this.router.navigate(['/login']);
   }
 
 }

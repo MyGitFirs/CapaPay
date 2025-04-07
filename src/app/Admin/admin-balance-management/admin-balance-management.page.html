@@ -13,7 +13,7 @@
                 <h2>Balance Management</h2>
                 <p></p>
             </div>
-            <ion-icon name="notifications"></ion-icon>
+            <ion-icon name="notifications" (click)="goToNotification()"></ion-icon>
         </div>
 
          <!-- Available Balance -->
@@ -29,10 +29,6 @@
                 <ion-item>
                     <ion-label position="stacked">Employee Name</ion-label>
                     <ion-input type="text" id="employeeName"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-label position="stacked">Employee ID</ion-label>
-                    <ion-input type="text" id="employeeID"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label position="stacked">Set Amount</ion-label>

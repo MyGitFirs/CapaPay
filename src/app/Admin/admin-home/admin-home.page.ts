@@ -24,5 +24,8 @@ export class AdminHomePage implements OnInit {
   goToKioskManagement() {
     this.router.navigate(['/admin-kiosk-management']);
   }
+  goToNotification() {
+    this.router.navigate(['/admin-notification']);
+  }
 
 }

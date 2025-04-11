@@ -19,4 +19,8 @@ export class RegisterPage implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  goToCompany() {
+    this.router.navigate(['/company-details']);
+  }
+
 }

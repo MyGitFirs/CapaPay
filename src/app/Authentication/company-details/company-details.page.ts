@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar, IonButton, IonList, IonListHeader, IonItem, IonFab, IonFabButton, IonHeader, IonTitle, IonCol, IonRow, IonInput, IonGrid,IonSelect, IonSelectOption } from "@ionic/angular/standalone";
 
 @Component({
@@ -13,7 +14,7 @@ export class CompanyDetailsPage implements OnInit {
   companyName: string = '';
   natureOfBusiness: string = '';
 
-  constructor() { }
+  constructor(private router: Router ) { }
 
   registerCompany() {
     console.log('Company Name:', this.companyName);
@@ -22,6 +23,11 @@ export class CompanyDetailsPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+
+  goToLogin() {
+    this.router.navigate(['/login']);
   }
 
   

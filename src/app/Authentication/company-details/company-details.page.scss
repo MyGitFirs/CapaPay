@@ -1,97 +1,137 @@
 /* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
 }
 
 ion-content {
-    --background: #ffffff !important; /* Override dark mode background */
+    --background: #f4f4f4 !important; /* Override dark mode background */
 }
 
-h2{
+
+/* Logo */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 70px; /* Reduced top margin */
+}
+
+.logo-img {
+    width: 150px; /* Made logo smaller */
+    height: auto;
+    display: block;
+}
+
+/* Section Container */
+.section-container {
+    background-color: #2B2318;
+    padding: 15px; /* Reduced padding */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 85%;
+    max-width: 550px; /* Reduced max-width */
+    margin: 20px auto;
     color: white;
     text-align: center;
-    margin-bottom: 15px;
+    margin-top: 0px;
 }
 
+/* Headings */
+h2 {
+    color: white;
+    margin: 8px 0;
+    font-size: 15px; /* Reduced font size */
+    font-weight: 300;
+}
 h3 {
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    color: white;
+    padding-bottom: 8px; /* Reduced padding */
+    padding-top: 15px; /* Reduced padding */
+    text-align: left;
+    font-size: 16px; /* Reduced font size */
+    font-weight: 300;
 }
 
+/* Form Fields */
 ion-item.inputCompany {
     --background: white;
+    --border-color: transparent;
+    --highlight-color: transparent;
+    --inner-border-width: 0;
+    --border-width: 0;
+    --highlight-height: 0;
     color: black;
+    margin: 8px 0; /* Reduced margin */
+    border-radius: 5px;
+    box-shadow: none;
 }
 
 ion-label {
     color: black;
     --background: white;
-   
 }
 
 ion-input {
-  
     --background: white;
     --color: black;
     z-index: -1;
-}
-
-
-
-/* Section Containers */
-.section-container {
-    margin: 30px auto;
-    padding: 20px;
-    width: 85%;
-    max-width: 1200px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #2B2318;
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-.section-container:hover {
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: none;
+    --border-color: transparent;
+    --highlight-color: transparent;
 }
 
 /* Buttons */
 button {
-    --background-color: #007bff;
-    color: #fff;
+    background-color: #F7BC00;
+    color: black;
     border: none;
-    padding: 12px 20px;
-    border-radius: 4px;
-    font-size: 16px;
+    padding: 8px; /* Reduced padding */
+    border-radius: 5px;
+    font-size: 14px; /* Reduced font size */
     cursor: pointer;
-    transition: background-color 0.3s ease;
     width: 100%;
-    max-width: 200px;
-    margin: 10px 0;
+    max-width: 180px; /* Reduced max-width */
+    margin: 8px auto; /* Reduced margin */
     display: block;
-    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #d3d5d6;
+    background-color: #0056b3;
+    color: white;
 }
 
 button:focus {
     outline: none;
 }
 
-/* Nature of Business Button Styles */
+/* Business Button */
 .business-btn {
-    margin-bottom: 15px;
-    text-align: center;
+    background-color: transparent;
     color: white;
-    --border-color: white;
+    border: 1px solid white;
+    padding: 8px; /* Reduced padding */
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 12px; /* Reduced margin */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-transform: none;
+    --border-color: transparent;
 }
 
 .business-btn:hover {
@@ -99,10 +139,9 @@ button:focus {
     color: black;
 }
 
-/* Register Button Styles */
+/* Register Button */
 .register-btn {
-    margin-top: 25px;
-    width: 100%;
-    --background: #F7BC00 !important;
-    --color: black;
+    margin-top: 20px; /* Reduced margin-top */
+    text-transform: none;
+    font-weight: 300;
 }

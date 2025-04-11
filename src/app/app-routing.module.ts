@@ -95,6 +95,22 @@ const routes: Routes = [
     path: 'company-details',
     loadChildren: () => import('./Authentication/company-details/company-details.module').then( m => m.CompanyDetailsPageModule)
   },
+  {
+    path: 'admin-profile',
+    loadChildren: () => import('./Admin/admin-profile/admin-profile.module').then( m => m.AdminProfilePageModule)
+  },
+  {
+    path: 'employee-profile',
+    loadChildren: () => import('./Employee/employee-profile/employee-profile.module').then( m => m.EmployeeProfilePageModule)
+  },
+  {
+    path: 'kiosk-profile',
+    loadChildren: () => import('./Kiosk/kiosk-profile/kiosk-profile.module').then( m => m.KioskProfilePageModule)
+  },
+  {
+    path: 'kiosk-scanner',
+    loadChildren: () => import('./Kiosk/kiosk-scanner/kiosk-scanner.module').then( m => m.KioskScannerPageModule)
+  },
 ];
 
 @NgModule({

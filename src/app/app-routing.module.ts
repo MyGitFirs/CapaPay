@@ -94,8 +94,7 @@ const routes: Routes = [
   {
     path: 'company-details',
     loadChildren: () => import('./Authentication/company-details/company-details.module').then( m => m.CompanyDetailsPageModule)
-  }
-
+  },
 ];
 
 @NgModule({

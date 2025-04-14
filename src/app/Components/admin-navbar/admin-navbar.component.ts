@@ -31,6 +31,10 @@ export class AdminNavbarComponent  implements OnInit {
   goToQR() {
     this.router.navigate(['/admin-qr-generator']);
   }
+  goToProfile() {
+    this.router.navigate(['/admin-profile']);
+  }
+
 
   
   

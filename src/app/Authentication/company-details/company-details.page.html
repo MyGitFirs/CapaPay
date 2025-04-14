@@ -1,4 +1,3 @@
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +9,16 @@
 <body>
     <ion-app>
         <ion-content>
+            <div class="logo-container">
+                <img src="../../../assets/logo/vertical.png" alt="Logo Placeholder" class="logo-img">
+              </div>
             <div class="section-container">
-                <h2>Company Registration</h2>
+                <h2>Please enter your company details.</h2>
 
                 <!-- Company Name Input Field -->
                 <ion-item class="inputCompany">
-                    <ion-label position="stacked">Company Name</ion-label>
-                    <ion-input type="text" placeholder="Enter company name"></ion-input>
+                   
+                    <ion-input type="text" placeholder="Company Name"></ion-input>
                 </ion-item>
 
                 <!-- Nature of Business Buttons -->
@@ -30,7 +32,7 @@
                 <ion-button expand="full" fill="outline" class="business-btn">Wholesale/Retail</ion-button>
 
                 <!-- Register Company Button -->
-                <ion-button expand="full" color="primary" class="register-btn">Register Company</ion-button>
+                <ion-button expand="full" color="primary" class="register-btn" (click)="goToLogin()" >Register Company</ion-button>
             </div>
         </ion-content>
     </ion-app>

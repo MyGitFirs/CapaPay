@@ -25,5 +25,11 @@ export class KioskNavbarComponent  implements OnInit {
   goToNotification() {
     this.router.navigate(['/kiosk-notification']);
   }
+  goToProfile() {
+    this.router.navigate(['/kiosk-profile']);
+  }
+  goToScanner() {
+    this.router.navigate(['/kiosk-scanner']);
+  }
 
 }

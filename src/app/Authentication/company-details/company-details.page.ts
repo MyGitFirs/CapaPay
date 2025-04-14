@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar, IonButton, IonList, IonListHeader, IonItem, IonFab, IonFabButton, IonHeader, IonTitle, IonCol, IonRow, IonInput, IonGrid,IonSelect, IonSelectOption, IonCard } from "@ionic/angular/standalone";
+import { IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar, IonButton, IonList, IonListHeader, IonItem, IonFab, IonFabButton, IonHeader, IonTitle, IonCol, IonRow, IonInput, IonGrid,IonSelect, IonSelectOption } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-company-details',
@@ -13,7 +13,7 @@ export class CompanyDetailsPage implements OnInit {
   companyName: string = '';
   natureOfBusiness: string = '';
 
-  constructor() { }
+  constructor(private router: Router ) { }
 
   registerCompany() {
     console.log('Company Name:', this.companyName);
@@ -22,6 +22,11 @@ export class CompanyDetailsPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+
+  goToLogin() {
+    this.router.navigate(['/login']);
   }
 
   

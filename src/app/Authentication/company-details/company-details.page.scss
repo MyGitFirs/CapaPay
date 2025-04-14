@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,65 +6,105 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-    margin: 0;
+    line-height: 1.5;
 }
 
-.logo-container {
-    margin-bottom: 1px;
+ion-content {
+    --background: #ffffff !important; /* Override dark mode background */
 }
 
-.logo-img {
-    width: 150px; /* Make it bigger */
-    height: auto;
-    display: block;
-}
-
-.login-container {
-    background: #2B2318;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+h2{
+    color: white;
     text-align: center;
-}
-.login-container p {
     margin-bottom: 15px;
 }
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: white;
+
+h3 {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+ion-item.inputCompany {
+    --background: white;
     color: black;
-}
-.forgot-password {
-    text-align: right;
-    font-size: 0.9em;
-}
-.continue-btn {
-    background: #F7BC00;
-    color: rgb(0, 0, 0);
-    padding: 10px;
-    border: none;
+    margin: 8px 0; /* Reduced margin */
     border-radius: 5px;
+    box-shadow: none;
+}
+
+ion-label {
+    color: black;
+    --background: white;
+   
+}
+
+ion-input {
+  
+    --background: white;
+    --color: black;
+    z-index: -1;
+}
+
+
+
+/* Section Containers */
+.section-container {
+    margin: 30px auto;
+    padding: 20px;
+    width: 85%;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #2B2318;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.section-container:hover {
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Buttons */
+button {
+    --background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
     width: 100%;
-    margin-top: 10px;
+    max-width: 200px;
+    margin: 10px 0;
+    display: block;
+    text-align: center;
 }
-.continue-btn:hover {
-    background: #0056b3;
+
+button:hover {
+    background-color: #d3d5d6;
 }
-.register-link {
-    margin-top: 15px;
-    font-size: 0.9em;
+
+button:focus {
+    outline: none;
+}
+
+/* Nature of Business Button Styles */
+.business-btn {
+    margin-bottom: 15px;
+    text-align: center;
+    color: white;
+    --border-color: white;
+}
+
+.business-btn:hover {
+    background-color: #F7BC00;
     color: black;
+}
+
+/* Register Button Styles */
+.register-btn {
+    margin-top: 25px;
+    width: 100%;
+    --background: #F7BC00 !important;
+    --color: black;
 }

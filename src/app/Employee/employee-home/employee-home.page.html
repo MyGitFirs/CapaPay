@@ -10,61 +10,38 @@
         <ion-content>
             <!-- Header -->
             <div class="header">
-                <div>
-                    <h2>Hi Don Martin!</h2>
-                    <p>donmartinfrancisco13gmail.com</p>
-                </div>
+                <div *ngIf="user">
+                    <h2>Hi {{ user.firstName }} {{ user.lastName }}!</h2>
+                    <p>{{ user.email }}</p>
+                </div> 
                 <ion-icon name="notifications"></ion-icon>
             </div>
 
             <!-- Available Balance -->
-            <div class="section-container balance-container">
+            <div class="section-container balance-container" *ngIf="balance !== null">
                 <h3>Available Balance</h3>
-                <h1>₱ 5,000.00</h1>
+                <h1>₱ {{ balance | number:'1.2-2' }}</h1>
             </div>
 
           <!-- Recent Transactions -->
-<div class="section-container recent-transactions">
-    <ion-list>
-        <ion-list-header>
-            <h3>Recent Transactions</h3>
-        </ion-list-header>
-        <ion-item class="transaction-item">
-            <ion-icon name="storefront-outline" slot="start"></ion-icon>
-            <ion-label>
-                <h2 class="store-name">ABC Store</h2>
-                <p class="transaction-details">Store | 2025-03-20</p>
-            </ion-label>
-            <div class="transaction-price">- PHP 200</div>
-        </ion-item>
-        <ion-item class="transaction-item">
-            <ion-icon name="fast-food-outline" slot="start"></ion-icon>
-            <ion-label>
-                <h2 class="store-name">XYZ Canteen</h2>
-                <p class="transaction-details">Canteen | 2025-03-19</p>
-            </ion-label>
-            <div class="transaction-price">- PHP 150</div>
-        </ion-item>
-        <ion-item class="transaction-item">
-            <ion-icon name="storefront-outline" slot="start"></ion-icon>
-            <ion-label>
-                <h2 class="store-name">ABC Store</h2>
-                <p class="transaction-details">Store | 2025-03-20</p>
-            </ion-label>
-            <div class="transaction-price">- PHP 200</div>
-        </ion-item>
-        <ion-item class="transaction-item">
-            <ion-icon name="fast-food-outline" slot="start"></ion-icon>
-            <ion-label>
-                <h2 class="store-name">XYZ Canteen</h2>
-                <p class="transaction-details">Canteen | 2025-03-19</p>
-            </ion-label>
-            <div class="transaction-price">- PHP 150</div>
-        </ion-item>
-    </ion-list>
-</div>
+          <div class="section-container recent-transactions" *ngIf="recentTransactions.length">
+            <ion-list>
+              <ion-list-header>
+                <h3>Recent Transactions</h3>
+              </ion-list-header>
+              <ion-item class="transaction-item" *ngFor="let tx of recentTransactions">
+                <ion-icon [name]="tx.icon || 'card-outline'" slot="start"></ion-icon>
+                <ion-label>
+                  <h2 class="store-name">{{ tx.kioskName }}</h2>
+                  <p class="transaction-details">{{ tx.category }} | {{ tx.createdDate | date }}</p>
+                </ion-label>
+                <div class="transaction-price">
+                  {{ tx.type === 'credit' ? '+' : '-' }} PHP {{ tx.amount }}
+                </div>
+              </ion-item>
+            </ion-list>
+          </div>
         </ion-content>
-
         <!-- Employee Navigation -->
         <app-employee-navbar></app-employee-navbar>
      

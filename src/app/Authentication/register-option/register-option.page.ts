@@ -15,8 +15,8 @@ export class RegisterOptionPage implements OnInit {
   ngOnInit() {
   }
 
-  goToRegister() {
-    this.router.navigate(['/register']);
-  }
+  goToRegister(role: string) {
+    this.router.navigate(['/register'], { state: { role } });
+  }  
 
 }

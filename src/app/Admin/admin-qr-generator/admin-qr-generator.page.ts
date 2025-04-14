@@ -14,20 +14,24 @@ import { QRCodeComponent } from 'angularx-qrcode';
 })
 export class AdminQrGeneratorPage implements OnInit {
 
-  constructor(private navCtrl: NavController, private router: Router ) { }
-
-  goToHome() {
-    this.router.navigate(['/admin-home']);
-  }
-
-  qrData: string = 'Initial QR Data';
+  user: any;
+  qrData: string = '';
   private intervalId: any;
 
+  constructor(private navCtrl: NavController, private router: Router ) {}
+
   ngOnInit() {
-    this.generateQRCode();
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      this.user = JSON.parse(storedUser);
+      this.qrData = this.user.id; // Set QR data to user ID
+    }
+
     this.intervalId = setInterval(() => {
-      this.generateQRCode();
-    }, 30000); // Generate a new QR code every 30 seconds
+      if (this.user) {
+        this.qrData = this.user.id; // Keep QR data synced if needed
+      }
+    }, 30000);
   }
 
   ngOnDestroy() {
@@ -36,9 +40,7 @@ export class AdminQrGeneratorPage implements OnInit {
     }
   }
 
-  generateQRCode() {
-    // Generate a random string as QR data (you can customize this)
-    this.qrData = Math.random().toString(36).substring(2);
+  goToHome() {
+    this.router.navigate(['/admin-home']);
   }
-  
 }

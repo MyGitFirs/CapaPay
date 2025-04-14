@@ -18,48 +18,32 @@
         </div>
 
        <!-- Recent Transactions -->
-<div class="section-container recent-transactions">
-    <ion-list>
-       
-        <!-- Transactions for March 20, 2025 -->
-        <div class="transaction-date">March 20, 2025</div>
-        <ion-item class="transaction-item">
-            <ion-icon name="storefront-outline" slot="start"></ion-icon>
-            <ion-label>
-                <h2 class="store-name">ABC Store</h2>
-                <p class="transaction-details">Store</p>
-            </ion-label>
-            <div class="transaction-price">- PHP 200</div>
-        </ion-item>
-        <ion-item class="transaction-item">
-            <ion-icon name="storefront-outline" slot="start"></ion-icon>
-            <ion-label>
-                <h2 class="store-name">ABC Store</h2>
-                <p class="transaction-details">Store</p>
-            </ion-label>
-            <div class="transaction-price">- PHP 200</div>
-        </ion-item>
-
-        <!-- Transactions for March 19, 2025 -->
-        <div class="transaction-date">March 19, 2025</div>
-        <ion-item class="transaction-item">
-            <ion-icon name="fast-food-outline" slot="start"></ion-icon>
-            <ion-label>
-                <h2 class="store-name">XYZ Canteen</h2>
-                <p class="transaction-details">Canteen</p>
-            </ion-label>
-            <div class="transaction-price">- PHP 150</div>
-        </ion-item>
-        <ion-item class="transaction-item">
-            <ion-icon name="fast-food-outline" slot="start"></ion-icon>
-            <ion-label>
-                <h2 class="store-name">XYZ Canteen</h2>
-                <p class="transaction-details">Canteen</p>
-            </ion-label>
-            <div class="transaction-price">- PHP 150</div>
-        </ion-item>
-    </ion-list>
-</div>
+       <div class="section-container recent-transactions">
+        <ion-list *ngIf="groupedTransactions.length > 0">
+            <ng-container *ngFor="let group of groupedTransactions">
+              <div class="transaction-date">
+                {{ group.date | date: 'fullDate' }}
+              </div>
+              <ng-container *ngFor="let transaction of group.transactions">
+                <ion-item class="transaction-item">
+                  <ion-icon [name]="transaction.category === 'Canteen' ? 'fast-food-outline' : 'storefront-outline'" slot="start"></ion-icon>
+                  <ion-label>
+                    <h2 class="store-name">{{ transaction.kioskName }}</h2>
+                    <p class="transaction-details">{{ transaction.category }}</p>
+                  </ion-label>
+                  <div class="transaction-price" [class.credit]="transaction.type === 'credit'">
+                    {{ transaction.type === 'credit' ? '+' : '-' }} PHP {{ transaction.amount | number: '1.2-2' }}
+                  </div>
+                </ion-item>
+              </ng-container>
+            </ng-container>
+          </ion-list>      
+      
+          <div *ngIf="groupedTransactions.length === 0" class="empty-state">
+            <ion-icon name="document-text-outline" style="font-size: 48px; color: #ccc;"></ion-icon>
+            <p style="margin-top: 12px; color: #666; font-size: 16px;">No transactions found yet.</p>
+          </div>      
+      </div>
 
 
       

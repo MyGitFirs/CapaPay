@@ -28,16 +28,22 @@
             {{ group.date | date: 'fullDate' }}
           </div>
           <ng-container *ngFor="let transaction of group.transactions">
-            <ion-item class="transaction-item">
-              <ion-icon [name]="transaction.category === 'Canteen' ? 'fast-food-outline' : 'storefront-outline'" slot="start"></ion-icon>
-              <ion-label>
-                <h2 class="store-name">{{ transaction.kioskName }}</h2>
-                <p class="transaction-details">{{ transaction.category }}</p>
-              </ion-label>
-              <div class="transaction-price" [class.credit]="transaction.type === 'credit'">
-                {{ transaction.type === 'credit' ? '+' : '-' }} PHP {{ transaction.amount | number: '1.2-2' }}
-              </div>
-            </ion-item>
+            <ion-item 
+            class="transaction-item"
+            button
+            (click)="goToReceipt(transaction)">
+            <ion-icon 
+              [name]="transaction.category === 'Canteen' ? 'fast-food-outline' : 'storefront-outline'" 
+              slot="start">
+            </ion-icon>
+            <ion-label>
+              <h2 class="store-name">{{ transaction.kioskName }}</h2>
+              <p class="transaction-details">{{ transaction.category }}</p>
+            </ion-label>
+            <div class="transaction-price" [class.credit]="transaction.type === 'credit'">
+              {{ transaction.type === 'credit' ? '+' : '-' }} PHP {{ transaction.amount | number: '1.2-2' }}
+            </div>
+          </ion-item>          
           </ng-container>
         </ng-container>
       </ion-list>      

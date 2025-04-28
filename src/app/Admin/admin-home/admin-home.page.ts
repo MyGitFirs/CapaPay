@@ -10,7 +10,7 @@ import { TransactionService } from '../../services/transaction.service';
   selector: 'app-admin-home',
   templateUrl: './admin-home.page.html',
   styleUrls: ['./admin-home.page.scss'],
-  imports: [IonRefresherContent, IonRefresher, CommonModule,AdminNavbarComponent, IonTitle, IonHeader, IonFabButton, IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar] 
+  imports: [IonRefresherContent, IonRefresher, CommonModule, AdminNavbarComponent, IonItem, IonListHeader, IonList, IonApp, IonIcon, IonLabel, IonContent] 
 })
 export class AdminHomePage implements OnInit {
   user: any = null;

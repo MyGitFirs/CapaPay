@@ -2,33 +2,109 @@ import { Component, OnInit } from '@angular/core';
 import { IonCard } from '@ionic/angular';
 import { IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar, IonButton, IonList, IonListHeader, IonItem, IonFab, IonFabButton, IonHeader, IonTitle, IonCol, IonRow, IonInput, IonGrid,IonSelect, IonSelectOption } from "@ionic/angular/standalone";
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
+import { CompanyService } from 'src/app/services/company.service';
+import { ToastController, LoadingController } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-company-details',
   templateUrl: './company-details.page.html',
   styleUrls: ['./company-details.page.scss'],
-  imports: [ IonGrid, IonInput, IonRow, IonCol, IonTitle, IonHeader, IonFabButton, IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar, IonSelect,IonSelectOption] // ✅ Import required Ionic components
+  imports: [FormsModule, IonInput, IonItem, IonButton] // ✅ Import required Ionic components
+ // ✅ Import required Ionic components
 
 })
 export class CompanyDetailsPage implements OnInit {
-  
   companyName: string = '';
   natureOfBusiness: string = '';
+  newUser: any;
 
-  constructor(private router: Router ) { }
-
-  registerCompany() {
-    console.log('Company Name:', this.companyName);
-    console.log('Nature of Business:', this.natureOfBusiness);
-    // Add your registration logic here
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    private companyService: CompanyService,
+    private toastController: ToastController,
+    private loadingController: LoadingController
+  ) {
+    const nav = this.router.getCurrentNavigation();
+    if (nav?.extras?.state?.['newUser']) {
+      this.newUser = nav.extras.state['newUser'];
+    }
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+  async registerCompany() {
+    if (!this.companyName || !this.natureOfBusiness || !this.newUser) {
+      const toast = await this.toastController.create({
+        message: 'Please fill in all company details.',
+        duration: 2000,
+        color: 'danger'
+      });
+      return toast.present();
+    }
+
+    const loading = await this.loadingController.create({
+      message: 'Completing registration...',
+      spinner: 'crescent'
+    });
+    await loading.present();
+
+    const companyData = {
+      companyName: this.companyName,
+      businessCategory: this.natureOfBusiness
+    };
+
+    this.companyService.createCompany(companyData).subscribe({
+      next: async (companyRes) => {
+        const companyId = companyRes?.id || companyRes?.companyId;
+        if (!companyId) {
+          await loading.dismiss();
+          const toast = await this.toastController.create({
+            message: 'Failed to create company.',
+            duration: 2000,
+            color: 'danger'
+          });
+          return toast.present();
+        }
+
+        this.newUser.companyId = companyId;
+
+        this.userService.register(this.newUser).subscribe({
+          next: async () => {
+            await loading.dismiss();
+            const toast = await this.toastController.create({
+              message: 'Registration successful!',
+              duration: 2000,
+              color: 'success'
+            });
+            toast.present();
+            this.router.navigate(['/login']);
+          },
+          error: async () => {
+            await loading.dismiss();
+            const toast = await this.toastController.create({
+              message: 'Registration failed. Try again.',
+              duration: 2000,
+              color: 'danger'
+            });
+            toast.present();
+          }
+        });
+      },
+      error: async () => {
+        await loading.dismiss();
+        const toast = await this.toastController.create({
+          message: 'Company creation failed.',
+          duration: 2000,
+          color: 'danger'
+        });
+        toast.present();
+      }
+    });
+  }
 
   goToLogin() {
     this.router.navigate(['/login']);
   }
-
-  
 }

@@ -8,7 +8,7 @@ import { EmployeeNavbarComponent } from '../../Components/employee-navbar/employ
   selector: 'app-employee-notification',
   templateUrl: './employee-notification.page.html',
   styleUrls: ['./employee-notification.page.scss'],
-  imports: [EmployeeNavbarComponent, IonRadio, IonTitle, IonHeader, IonFabButton, IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar] 
+  imports: [EmployeeNavbarComponent, IonRadio, IonApp, IonIcon, IonContent] 
 })
 export class EmployeeNotificationPage implements OnInit {
 

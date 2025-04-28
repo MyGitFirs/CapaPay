@@ -7,7 +7,8 @@ import { IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonTool
   selector: 'app-admin-navbar',
   templateUrl: './admin-navbar.component.html',
   styleUrls: ['./admin-navbar.component.scss'],
-  imports: [IonGrid, IonInput, IonRow, IonCol, IonTitle, IonHeader, IonFabButton, IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar] // ✅ Import required Ionic components
+  imports: [IonFabButton, IonFab, IonIcon, IonTabButton, IonTabBar] // ✅ Import required Ionic components
+ // ✅ Import required Ionic components
 
 })
 export class AdminNavbarComponent  implements OnInit {

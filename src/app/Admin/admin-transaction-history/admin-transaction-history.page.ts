@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-admin-transaction-history',
   templateUrl: './admin-transaction-history.page.html',
   styleUrls: ['./admin-transaction-history.page.scss'],
-  imports: [CommonModule,AdminNavbarComponent, IonTitle, IonHeader, IonFabButton, IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar] 
+  imports: [CommonModule, AdminNavbarComponent, IonItem, IonList, IonApp, IonIcon, IonLabel, IonContent] 
 })
 export class AdminTransactionHistoryPage implements OnInit {
   groupedTransactions: { date: string, transactions: any[] }[] = [];
@@ -64,5 +64,8 @@ export class AdminTransactionHistoryPage implements OnInit {
   goToNotification() {
     this.router.navigate(['/admin-notification']);
   }
+  goToReceipt(transaction: any) {
+    this.router.navigate(['/admin-receipt', transaction.id]);
+  }  
 
 }

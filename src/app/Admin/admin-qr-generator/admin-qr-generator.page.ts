@@ -9,7 +9,7 @@ import { QRCodeComponent } from 'angularx-qrcode';
   selector: 'app-admin-qr-generator',
   templateUrl: './admin-qr-generator.page.html',
   styleUrls: ['./admin-qr-generator.page.scss'],
-  imports: [ IonCardContent, QRCodeComponent, IonInput,  IonTitle, IonHeader, IonFabButton, IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar] 
+  imports: [QRCodeComponent, IonApp, IonIcon, IonContent] 
   
 })
 export class AdminQrGeneratorPage implements OnInit {

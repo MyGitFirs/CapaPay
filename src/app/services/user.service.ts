@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private baseUrl = 'https://localhost:5001/api/Auth';
+  private baseUrl = environment.baseUrl;
+  private authUrl = `${this.baseUrl}/Auth`;
   private currentUserSubject = new BehaviorSubject<any>(null);
   public currentUser$ = this.currentUserSubject.asObservable();
 
@@ -27,7 +29,7 @@ export class UserService {
   login(credentials: { email: string; password: string }): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    return this.http.post(`${this.baseUrl}/login`, credentials, { headers }).pipe(
+    return this.http.post(`${this.authUrl}/login`, credentials, { headers }).pipe(
       tap(response => {
         console.log('✅ Login success:', response);
         this.setUser(response);
@@ -53,7 +55,7 @@ export class UserService {
   }): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    return this.http.post(`${this.baseUrl}/register`, userData, { headers }).pipe(
+    return this.http.post(`${this.authUrl}/register`, userData, { headers }).pipe(
       tap(response => {
         console.log('✅ Register success:', response);
       }),

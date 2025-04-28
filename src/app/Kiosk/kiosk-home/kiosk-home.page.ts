@@ -7,7 +7,7 @@ import { KioskNavbarComponent } from '../../Components/kiosk-navbar/kiosk-navbar
   selector: 'app-kiosk-home',
   templateUrl: './kiosk-home.page.html',
   styleUrls: ['./kiosk-home.page.scss'],
-  imports: [KioskNavbarComponent, IonTitle, IonHeader, IonFabButton, IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar] 
+  imports: [KioskNavbarComponent, IonItem, IonListHeader, IonList, IonApp, IonIcon, IonLabel, IonContent] 
 })
 export class KioskHomePage implements OnInit {
 

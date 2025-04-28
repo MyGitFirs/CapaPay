@@ -7,7 +7,7 @@ import { IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonTool
   selector: 'app-admin-employee-transaction-report',
   templateUrl: './admin-employee-transaction-report.page.html',
   styleUrls: ['./admin-employee-transaction-report.page.scss'],
-  imports: [IonSearchbar, IonGrid, IonRow, IonCol, IonTitle, IonHeader, IonFabButton, IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar] 
+  imports: [IonSearchbar, IonGrid, IonRow, IonCol, IonApp, IonIcon, IonContent] 
 })
 export class AdminEmployeeTransactionReportPage implements OnInit {
 

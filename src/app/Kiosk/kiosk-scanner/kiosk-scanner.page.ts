@@ -7,7 +7,7 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
   selector: 'app-kiosk-scanner',
   templateUrl: './kiosk-scanner.page.html',
   styleUrls: ['./kiosk-scanner.page.scss'],
-  imports: [ZXingScannerModule, IonInput, KioskNavbarComponent, IonTitle, IonHeader, IonFabButton, IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar] 
+  imports: [ZXingScannerModule, IonInput, KioskNavbarComponent, IonTitle, IonHeader, IonItem, IonApp, IonLabel, IonContent, IonToolbar] 
 
 })
 export class KioskScannerPage implements OnInit {

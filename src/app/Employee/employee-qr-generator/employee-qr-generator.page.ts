@@ -8,7 +8,7 @@ import { QRCodeComponent } from 'angularx-qrcode';
   selector: 'app-employee-qr-generator',
   templateUrl: './employee-qr-generator.page.html',
   styleUrls: ['./employee-qr-generator.page.scss'],
-  imports: [QRCodeComponent,IonInput,  IonTitle, IonHeader, IonFabButton, IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar] 
+  imports: [QRCodeComponent, IonApp, IonIcon, IonContent] 
 
 })
 export class EmployeeQrGeneratorPage implements OnInit {

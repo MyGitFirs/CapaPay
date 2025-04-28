@@ -7,7 +7,7 @@ import { KioskNavbarComponent } from '../../Components/kiosk-navbar/kiosk-navbar
   selector: 'app-kiosk-transaction-history',
   templateUrl: './kiosk-transaction-history.page.html',
   styleUrls: ['./kiosk-transaction-history.page.scss'],
-  imports: [KioskNavbarComponent, IonTitle, IonHeader, IonFabButton, IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar] 
+  imports: [KioskNavbarComponent, IonApp, IonIcon, IonContent] 
 })
 export class KioskTransactionHistoryPage implements OnInit {
 

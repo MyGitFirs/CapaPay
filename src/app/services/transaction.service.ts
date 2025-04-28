@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TransactionService {
 
-  private baseUrl = 'https://localhost:5001/api/Transaction'; // Adjust as needed
+  private baseUrl = environment.baseUrl;
+  private transactionUrl = `${this.baseUrl}/Transaction`; // Adjust as needed
 
   constructor(private http: HttpClient) { }
 
@@ -19,16 +21,16 @@ export class TransactionService {
       }
     });
 
-    return this.http.get(`${this.baseUrl}`, { params });
+    return this.http.get(`${this.transactionUrl}`, { params });
   }
 
   getTransaction(id: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${id}`);
+    return this.http.get(`${this.transactionUrl}/${id}`);
   }
 
   getTransactionsByUserId(userId: string, limit?: number, sortBy: string = 'date_desc'): Observable<any> {
     // Construct the URL with query parameters
-    let url = `${this.baseUrl}/user/${userId}?sortBy=${sortBy}`;
+    let url = `${this.transactionUrl}/user/${userId}?sortBy=${sortBy}`;
     
     if (limit) {
       url += `&limit=${limit}`; // Add the limit if provided
@@ -38,14 +40,14 @@ export class TransactionService {
   }  
 
   addTransaction(payload: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}`, payload);
+    return this.http.post(`${this.transactionUrl}`, payload);
   }
 
   updateTransaction(id: string, payload: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${id}`, payload);
+    return this.http.put(`${this.transactionUrl}/${id}`, payload);
   }
 
   deleteTransaction(id: string): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`);
+    return this.http.delete(`${this.transactionUrl}/${id}`);
   }
 }

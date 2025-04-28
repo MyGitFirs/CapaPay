@@ -5,8 +5,25 @@
     box-sizing: border-box;
 }
 
+
 body {
-    line-height: 1.5;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+.logo-container {
+    margin-bottom: 1px;
+}
+
+.logo-img {
+    width: 150px; /* Make it bigger */
+    height: auto;
+    display: block;
 }
 
 ion-content {

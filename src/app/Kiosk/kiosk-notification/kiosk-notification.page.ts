@@ -8,7 +8,7 @@ import { KioskNavbarComponent } from '../../Components/kiosk-navbar/kiosk-navbar
   selector: 'app-kiosk-notification',
   templateUrl: './kiosk-notification.page.html',
   styleUrls: ['./kiosk-notification.page.scss'],
-  imports: [KioskNavbarComponent, IonRadio, IonTitle, IonHeader, IonFabButton, IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar] 
+  imports: [KioskNavbarComponent, IonRadio, IonApp, IonIcon, IonContent] 
 })
 export class KioskNotificationPage implements OnInit {
 

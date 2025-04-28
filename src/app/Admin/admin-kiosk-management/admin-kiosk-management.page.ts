@@ -7,7 +7,7 @@ import { IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonTool
   selector: 'app-admin-kiosk-management',
   templateUrl: './admin-kiosk-management.page.html',
   styleUrls: ['./admin-kiosk-management.page.scss'],
-  imports: [IonGrid, IonRow, IonCol, IonTitle, IonHeader, IonFabButton, IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar] 
+  imports: [IonGrid, IonRow, IonCol, IonApp, IonIcon, IonContent] 
 })
 export class AdminKioskManagementPage implements OnInit {
 

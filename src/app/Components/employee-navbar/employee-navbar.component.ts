@@ -6,7 +6,7 @@ import { IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonTool
   selector: 'app-employee-navbar',
   templateUrl: './employee-navbar.component.html',
   styleUrls: ['./employee-navbar.component.scss'],
-  imports: [IonGrid, IonInput, IonRow, IonCol, IonTitle, IonHeader, IonFabButton, IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar] // ✅ Import required Ionic components
+  imports: [IonFabButton, IonFab, IonIcon, IonTabButton, IonTabBar]
 })
 export class EmployeeNavbarComponent  implements OnInit {
   

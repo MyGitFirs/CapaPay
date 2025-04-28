@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   selector: 'app-admin-balance-management',
   templateUrl: './admin-balance-management.page.html',
   styleUrls: ['./admin-balance-management.page.scss'],
-  imports: [AdminNavbarComponent, IonInput, IonTitle, IonHeader, IonFabButton, IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar] 
+  imports: [AdminNavbarComponent, IonInput, IonItem, IonList, IonButton, IonApp, IonIcon, IonLabel, IonContent] 
 })
 export class AdminBalanceManagementPage implements OnInit {
 

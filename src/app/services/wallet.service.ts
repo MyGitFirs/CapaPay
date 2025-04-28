@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WalletService {
 
-  private baseUrl = 'https://localhost:5001/api/Wallet'; // Adjust base URL as needed
+  private baseUrl = environment.baseUrl;
+  private walletUrl = `${this.baseUrl}/Wallet`;// Adjust base URL as needed
 
   constructor(private http: HttpClient) { }
 
@@ -19,30 +21,30 @@ export class WalletService {
       }
     });
 
-    return this.http.get(`${this.baseUrl}`, { params });
+    return this.http.get(`${this.walletUrl}`, { params });
   }
 
   getWallet(id: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${id}`);
+    return this.http.get(`${this.walletUrl}/${id}`);
   }
 
   addWallet(payload: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}`, payload);
+    return this.http.post(`${this.walletUrl}`, payload);
   }
 
   updateWallet(id: string, payload: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${id}`, payload);
+    return this.http.put(`${this.walletUrl}/${id}`, payload);
   }
 
   deleteWallet(id: string): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`);
+    return this.http.delete(`${this.walletUrl}/${id}`);
   }
 
   createCompanyWallet(payload: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/create-company-wallet`, payload);
+    return this.http.post(`${this.walletUrl}/create-company-wallet`, payload);
   }
 
   addBonus(payload: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/add-bonus`, payload);
+    return this.http.post(`${this.walletUrl}/add-bonus`, payload);
   }
 }

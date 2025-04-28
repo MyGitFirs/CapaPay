@@ -25,3 +25,25 @@
 #container a {
   text-decoration: none;
 }
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: white;
+}
+
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo-img {
+  width: 150px;
+  height: auto;
+}
+
+.spinner {
+  --color: #F7BC00; // Customize if needed
+}

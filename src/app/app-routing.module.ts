@@ -60,7 +60,7 @@ const routes: Routes = [
     loadChildren: () => import('./Admin/admin-notification/admin-notification.module').then( m => m.AdminNotificationPageModule)
   },
   {
-    path: 'admin-receipt',
+    path: 'admin-receipt/:id',
     loadChildren: () => import('./Admin/admin-receipt/admin-receipt.module').then( m => m.AdminReceiptPageModule)
   },
   {
@@ -94,6 +94,10 @@ const routes: Routes = [
   {
     path: 'company-details',
     loadChildren: () => import('./Authentication/company-details/company-details.module').then( m => m.CompanyDetailsPageModule)
+  },
+  {
+    path: 'kiosk-scanner',
+    loadChildren: () => import('./Kiosk/kiosk-scanner/kiosk-scanner.module').then( m => m.KioskScannerPageModule)
   },
 ];
 

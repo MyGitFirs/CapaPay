@@ -4,9 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import {
-  IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar,
-  IonTabs, IonTabBar, IonButton, IonList, IonListHeader, IonItem, IonFab,
-  IonFabButton, IonHeader, IonTitle, IonCol, IonRow, IonInput, IonGrid,
   ToastController, LoadingController
 } from "@ionic/angular/standalone";
 
@@ -16,11 +13,8 @@ import {
   styleUrls: ['./register.page.scss'],
   standalone: true,
   imports: [
-    IonGrid, IonInput, IonRow, IonCol, IonTitle, IonHeader, IonFabButton,
-    IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon,
-    IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs,
-    IonTabBar, HttpClientModule, FormsModule
-  ]
+    HttpClientModule, FormsModule
+]
 })
 export class RegisterPage implements OnInit {
 
@@ -45,7 +39,7 @@ export class RegisterPage implements OnInit {
 
   ngOnInit() {}
 
-  // Email validation function
+  
   isValidEmail(email: string): boolean {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailPattern.test(email);
@@ -91,7 +85,14 @@ export class RegisterPage implements OnInit {
       role: this.role,
       password: this.password
     };
-  
+
+    if (this.role === 'admin') {
+      // Temporarily store user data, then navigate to company details
+      this.router.navigate(['/company-details'], {
+        state: { newUser }
+      });
+      return;
+    }
     const loading = await this.loadingController.create({
       message: 'Registering...',
       spinner: 'crescent'

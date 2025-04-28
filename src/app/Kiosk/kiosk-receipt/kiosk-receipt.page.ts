@@ -5,7 +5,7 @@ import { IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonTool
   selector: 'app-kiosk-receipt',
   templateUrl: './kiosk-receipt.page.html',
   styleUrls: ['./kiosk-receipt.page.scss'],
-  imports: [IonTitle, IonHeader, IonFabButton, IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar] 
+  imports: [IonTitle, IonHeader, IonContent, IonToolbar] 
 })
 export class KioskReceiptPage implements OnInit {
 

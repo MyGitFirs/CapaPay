@@ -17,40 +17,22 @@
         </div>
 
    <!-- Notifications List -->
-<div class="notifications-container">
-    <div class="notification-wrapper">
-        <ion-radio slot="start"></ion-radio>
-        <div class="notification-item">
-            <div class="notification-message">
-                <p>You sent PHP 300 to Aling Kimberly on March 13, 2025, at 3:24 PM.</p>
-            </div>
+   <div class="notifications-container">
+    <div *ngFor="let msg of notifications" class="notification-wrapper">
+      <ion-radio slot="start"></ion-radio>
+      <div class="notification-item">
+        <div class="notification-message">
+          <p>{{ msg }}</p>
         </div>
+      </div>
     </div>
-    <div class="notification-wrapper">
-        <ion-radio slot="start"></ion-radio>
-        <div class="notification-item">
-            <div class="notification-message">
-                <p>You sent PHP 300 to Aling Kimberly on March 13, 2025, at 3:24 PM.</p>
-            </div>
-        </div>
-    </div>
-    <div class="notification-wrapper">
-        <ion-radio slot="start"></ion-radio>
-        <div class="notification-item">
-            <div class="notification-message">
-                <p>You sent PHP 300 to Aling Kimberly on March 13, 2025, at 3:24 PM.</p>
-            </div>
-        </div>
-    </div>
-    <div class="notification-wrapper">
-        <ion-radio slot="start"></ion-radio>
-        <div class="notification-item">
-            <div class="notification-message">
-                <p>You sent PHP 300 to Aling Kimberly on March 13, 2025, at 3:24 PM.</p>
-            </div>
-        </div>
-    </div>
-</div>
+    <ion-text *ngIf="notifications.length === 0" color="medium">
+        <p>No notifications yet.</p>
+      </ion-text>
+      
+  </div>
+  
+  
     </ion-content>
 
       <!-- Employee Navigation -->

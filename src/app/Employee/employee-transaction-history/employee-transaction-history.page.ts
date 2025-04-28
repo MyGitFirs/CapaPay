@@ -8,7 +8,7 @@ import { TransactionService } from '../../services/transaction.service';
   selector: 'app-employee-transaction-history',
   templateUrl: './employee-transaction-history.page.html',
   styleUrls: ['./employee-transaction-history.page.scss'],
-  imports: [CommonModule, EmployeeNavbarComponent, IonTitle, IonHeader, IonFabButton, IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs, IonTabBar] 
+  imports: [CommonModule, EmployeeNavbarComponent, IonItem, IonList, IonApp, IonIcon, IonLabel, IonContent] 
 })
 export class EmployeeTransactionHistoryPage implements OnInit {
   groupedTransactions: { date: string, transactions: any[] }[] = [];
@@ -57,6 +57,9 @@ export class EmployeeTransactionHistoryPage implements OnInit {
     });
   
     return grouped;
+  }
+  goToReceipt(transaction: any) {
+    this.router.navigate(['/employee-receipt', transaction.id]);
   }  
 
 }

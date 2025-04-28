@@ -5,9 +5,6 @@ import { UserService } from '../../services/user.service';
 import { FormsModule } from '@angular/forms';
 
 import {
-  IonApp, IonIcon, IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar,
-  IonTabs, IonTabBar, IonButton, IonList, IonListHeader, IonItem, IonFab,
-  IonFabButton, IonHeader, IonTitle, IonCol, IonRow, IonInput, IonGrid,
   ToastController, LoadingController
 } from "@ionic/angular/standalone";
 
@@ -17,11 +14,8 @@ import {
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   imports: [
-    IonGrid, IonInput, IonRow, IonCol, IonTitle, IonHeader, IonFabButton,
-    IonFab, IonItem, IonListHeader, IonList, IonButton, IonApp, IonIcon,
-    IonTabButton, IonLabel, IonFooter, IonContent, IonToolbar, IonTabs,
-    IonTabBar, HttpClientModule, FormsModule
-  ]
+    HttpClientModule, FormsModule
+]
 })
 export class LoginPage implements OnInit {
 
@@ -111,7 +105,7 @@ export class LoginPage implements OnInit {
         loading.dismiss();
       },
       error: async (err) => {
-        console.error('❌ Login error:', err);
+        console.error('❌ Login error:', err.error || err.message || JSON.stringify(err));
 
         const toast = await this.toastController.create({
           message: 'Login failed. Please try again.',
